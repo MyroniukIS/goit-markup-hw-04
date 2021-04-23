@@ -4,7 +4,7 @@
   --main-bcg-color: #ffffff;
   --team-section-bcg-color: #f5f4fa;
   --hero-footer-bcg-color: #2f303a;
-  --hero-down-bcg-coor: #C4C4C4;
+  --hero-down-bcg-color: #C4C4C4;
   --hero-gradient-color: rgba(47, 48, 58, 0.4);
   --accent-logo-hover-color: #2196f3;
   --main-text-color: #757575;
@@ -18,6 +18,16 @@
   --border-color: #ececec;
   --border-color-portfolio: #eeeeee;
   --margin-card: 30px;
+  --svg-links-color: #AFB1B8;
+  --footer-link-bgc: rgba(255, 255, 255, 0.1);
+  --shadov-0-15: rgba(0, 0, 0, 0.15);
+  --shadow-0-12: rgba(0, 0, 0, 0.12);
+  --shadow-0-14: rgba(0, 0, 0, 0.14);
+  --shadow-0-2: rgba(0, 0, 0, 0.2);
+  --shadow-0-1: rgba(0, 0, 0, 0.1);
+  --shadow-0-08: rgba(0, 0, 0, 0.08);
+  --shadow-0-06: rgba(0, 0, 0, 0.06);
+  --shadow-0-16: rgba(0, 0, 0, 0.16);
 }
 
 body {
@@ -131,23 +141,24 @@ img {
   color: var(--headers-nav-color);
 }
 .up-contacts-list-item {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: inherit;
+  color: var(--main-text-color);
 }
 .up-contacts-icon {
-  width: 16px;
-  height: 12px;
-  stroke: var(--main-text-color);
+  fill: currentColor;
+  margin-right: 10px;
 }
 
 /*MAIN SECTION*/
 .main-section {
   /* padding-top: 200px;
   padding-bottom: 200px; */
-  background-color: var(--hero-down-bcg-coor);
+  background-color: var(--hero-down-bcg-color);
   background-image: linear-gradient(to right, var(--hero-gradient-color), var(--hero-gradient-color)), url("../images/heroimg.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -185,7 +196,7 @@ img {
   color: var(--actbtn-color);
   cursor: pointer;
   background-color: var(--actbtn-bcg);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 4px var(--shadov-0-15);
   border-radius: 4px;
   border: 0;
 }
@@ -198,6 +209,15 @@ img {
 .features-list > .features-list-element {
   flex-basis: calc((100% - 4 * var(--margin-card)) / 4);
   margin-right: var(--margin-card);
+}
+.features-list-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  background-color: var(--team-section-bcg-color);
 }
 .features-title {
   min-width: 270px;
@@ -251,13 +271,13 @@ img {
   margin-left: var(--margin-card);
   margin-top: var(--margin-card);
   background-color: var(--main-bcg-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px var(--shadow-0-12), 0px 1px 1px var(--shadow-0-14),
+    0px 2px 1px var(--shadow-0-2);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 .team-list-element-container {
-  padding: 30px 55px;
+  padding: 30px 32px;
   text-align: center;
 }
 .team-person {
@@ -268,8 +288,62 @@ img {
   color: var(--headers-nav-color);
 }
 .team-person-role {
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.19;
+}
+.team-social-links-list {
+  display: inline-flex;
+}
+.team-social-links-element:not(:last-child) {
+  margin-right: 10px;
+}
+.team-social-links-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+.team-social-links-link:hover,
+.team-social-links-link:focus {
+  background-color: var(--actbtn-bcg);
+  border-radius: 50%;
+}
+.team-social-links-link:hover .team-social-links-icon,
+.team-social-links-link:focus .team-social-links-icon {
+  fill: var(--actbtn-color);
+}
+.team-social-links-icon {
+  fill: var(--svg-links-color);
+}
+
+/*CLIENTS*/
+.clients-list {
+  display: inline-flex;
+}
+.clients-links-element:not(:last-child) {
+  margin-right: var(--margin-card);
+}
+.clients-links-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--svg-links-color);
+  border-radius: 4px;
+}
+.clients-links-link:hover .clients-links-icon,
+.clients-links-link:focus .clients-links-icon {
+  fill: var(--actbtn-bcg);
+}
+.clients-links-link:hover,
+.clients-links-link:focus {
+  border: 1px solid var(--actbtn-bcg);
+}
+.clients-links-icon {
+  fill: var(--svg-links-color);
 }
 
 /*FOOTER*/
@@ -277,6 +351,13 @@ img {
   background-color: var(--hero-footer-bcg-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.address-container {
+  margin-right: 70px;
 }
 .down-contacts-list-item {
   font-size: 14px;
@@ -294,6 +375,41 @@ img {
 }
 .down-contacts-list-element:not(:last-child) {
   margin-bottom: 9px;
+}
+.footer-social-links-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14; 
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--hero-footer-text-color);
+}
+.footer-social-links-list {
+  display: inline-flex;
+}
+.footer-social-links-element:not(:last-child) {
+  margin-right: 10px;
+}
+.footer-social-links-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--footer-link-bgc);
+  border-radius: 50%;
+}
+.footer-social-links-link:hover,
+.footer-social-links-link:focus {
+  background-color: var(--actbtn-bcg);
+  border-radius: 50%;
+}
+.footer-social-links-link:hover .team-social-links-icon,
+.footer-social-links-link:focus .team-social-links-icon {
+  fill: var(--actbtn-color);
+}
+.footer-social-links-icon {
+  fill: var(--actbtn-color);
 }
 
 /*PAGE PORTFOLIO Galery*/
@@ -321,8 +437,8 @@ img {
   background-color: var(--actbtn-bcg);
   color: var(--actbtn-color);
   cursor: pointer;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px var(--shadow-0-1), 0px 1px 2px var(--shadow-0-08),
+    0px 2px 2px var(--shadow-0-12);
 }
 .galery-list {
   display: flex;
@@ -335,6 +451,9 @@ img {
   margin-left: var(--margin-card);
   margin-top: var(--margin-card);
   background: var(--main-bcg-color);
+}
+.galery-list-element:hover {
+  box-shadow: 0px 1px 1px var(--shadow-0-12), 0px 4px 4px var(--shadow-0-06), 1px 4px 6px var(--shadow-0-16);
 }
 .galery-list-container {
   padding: 20px 24px;
