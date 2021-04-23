@@ -4,6 +4,8 @@
   --main-bcg-color: #ffffff;
   --team-section-bcg-color: #f5f4fa;
   --hero-footer-bcg-color: #2f303a;
+  --hero-down-bcg-coor: #C4C4C4;
+  --hero-gradient-color: rgba(47, 48, 58, 0.4);
   --accent-logo-hover-color: #2196f3;
   --main-text-color: #757575;
   --headers-nav-color: #212121;
@@ -138,10 +140,23 @@ img {
 
 /*MAIN SECTION*/
 .main-section {
-  padding-top: 200px;
-  padding-bottom: 200px;
-  background-color: var(--hero-footer-bcg-color);
+  /* padding-top: 200px;
+  padding-bottom: 200px; */
+  background-color: var(--hero-down-bcg-coor);
+  background-image: linear-gradient(to right, var(--hero-gradient-color), var(--hero-gradient-color)), url("../images/heroimg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
+}
+.hero {
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .main-title {
   margin-right: auto;
