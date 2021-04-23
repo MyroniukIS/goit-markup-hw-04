@@ -137,6 +137,11 @@ img {
   letter-spacing: 0.02em;
   color: inherit;
 }
+.up-contacts-icon {
+  width: 16px;
+  height: 12px;
+  stroke: var(--main-text-color);
+}
 
 /*MAIN SECTION*/
 .main-section {
